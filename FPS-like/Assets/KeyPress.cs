@@ -18,16 +18,14 @@ public class KeyPress : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		RaycastHit hitInfo;
-
+		
 		if(Input.GetKeyDown(KeyCode.Q)){
 
 			if ( Physics.Raycast (transform.position, transform.forward, rayDistance)){
 
 				GameObject.FindWithTag("key").transform.position += Vector3.down * 0.2f;
 
-				Instantiate ( keyPresser, transform.position, transform.rotation );
+				//Instantiate ( keyPresser, transform.position, transform.rotation );
 
 			}
 		}
