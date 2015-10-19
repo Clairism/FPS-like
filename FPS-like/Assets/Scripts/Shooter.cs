@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Shooter : MonoBehaviour {
 
-	private float rayDistance = 7f;
+	private float rayDistance = 8f;
 
 	private Transform startPoint, endPoint;
 	private float percentage;
@@ -22,7 +22,7 @@ public class Shooter : MonoBehaviour {
 
 				//transform.position = hitObject.transform.position;
 
-				startPoint = GameObject.Find ("player").transform;
+				startPoint = gameObject.transform;
 				endPoint = hitObject.transform;
 
 				transform.position = Vector3.Lerp (startPoint.position, endPoint.position, percentage);
