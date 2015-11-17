@@ -25,6 +25,16 @@ public class playerControl : MonoBehaviour {
 		transform.Rotate(0, (Input.GetAxis("Mouse X") * RotationSpeed),0, Space.World);
 		transform.Rotate( (Input.GetAxis("Mouse Y") * RotationSpeed),0,0, Space.World);
 
+		if(((transform.rotation.eulerAngles.x<180)&&(transform.rotation.eulerAngles.x>90))||
+		   ((transform.rotation.eulerAngles.z<180)&&(transform.rotation.eulerAngles.z>90))){
+			// preserve Y rotation
+			float currentLook = transform.rotation.eulerAngles.y;
+			// put character to default rotation
+			transform.rotation = Quaternion.identity;
+			// re-introduce Y rotation
+			transform.Rotate(0,0,0);
+		}
+
 
  	}
 }
